@@ -1,7 +1,18 @@
 # Author: Ashish Chokhani
 
-# Title:Encoder Decoder model with Transformer and Attention Mechanisms
+# Title: Encoder Decoder model with Transformer and Attention Mechanisms
 --- 
+
+## Hey everyone! in this project I have implemented an Encoder Decoder model for NLP task.
+- Training data and eval data have been provided in data directory.
+- If you go through the data, you would find that input is sequence of characters of fixed length(8) and similarly, output is another sequence of characters of same length.
+- Now initially to achieve the translation, I tried with different model such as RNN, GRU, LSTM and Bidirectional LSTM.
+- It turned out that Bidirectional LSTM was the best choice as even though the length of input and transformed sentence is pretty small, but it had long term dependencies which Bidirectional LSTM could solve.
+- However the implementation involved tensorflow. Also it did not run on GPU and hence it required 2 hrs to train the model :(.
+- Again the accuracy rate with that implemnntation was around 94%.
+- But later I also added Transformer and Attention Mechanism.
+- It worked magically well :). Our model was able to achieve accuracy rate of 98%.
+- Also its implementation was much faster as I had converted the code to Pytorch Implementation instead of Tensorflow. 
 
 ### GRUs
 
