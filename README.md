@@ -1,26 +1,7 @@
 # Author: Ashish Chokhani
-# Course Title: Deep Learning
-# [Naresh Manwani]([https://faculty.iiit.ac.in/~naresh/](https://sites.google.com/site/nareshmanwani/home) - Deep Learning
-
 --- 
 
-# Course Overview
-
-- Gradient Descent
-
-- In addition to minimizing the reconstruction loss, we also want our model to be as simple as possible - so the magnitude of the weights must also be lesser
-
-- Perceptron Learning: Perceptrons can only solve linearly-separable problems
-
-- Deeper networks: MLP
-
-- Backpropagation
-
-### Motivations for Deep Architecture
-    - Insufficient depth can hurt
-    - Brain seems to to deep
-
-- Learning representations, automating this
+ this
 
 - History: Fukushima (1980), LeNet (1998), Many-layered MLP with BackProp (tried, but without much success and with vanishing gradients), Relatively recent work
 
@@ -32,64 +13,6 @@
 
 
 
-## [Vineeth Balasubramanian](http://www.iith.ac.in/~vineethnb/index.html) - Backprop and Gradient Descent (11:30 to 13:00)
-
-- Loss function from $J$ and $W_{i, j}$
-
-- Backprop
-
-- Gradient Descent
-
--  Unfortunately backprop doesn’t work very well with many layers
-
-- 40s: perceptrons; 50s: MLPs, apparently MLPs can solve any problem; 70s: MLPs cannot solve non-linear problems, like XOR; 90s: Hinton revived NN using non-linear activations and backprop
-
-### Local minima
-    - NN loss functions are non-convex
-        - non-linear activations
-        - NNs have multiple local minima
-    - So, weight initialization determines which local minimum your deep learning-optimized weights fall into
-        - Also, weights are much more higher-dimensional
-    - Gradient descent: drop a blind person on the Himalayas, ask them to find the lowest point
-    - Non-identifiability problem/symmetry problem: any initialization is fine, any local minimum is OK
-    - “Almost all local minima are global minima”
-
-### Saddle Points
-    - Gradient=0 could also occur at saddle points!
-    - Saddle Point = minimum in one dimension, maximum in another
-    - As the number of dimensions increases, the occurrence of saddle points is also greater
-
-### Cliffs
-    - Highly non-linear error surfaces may also have cliffs
-    - Occur for RNNs
-
-### Vanishing/Exploding gradient
-    - Gradients cascaded back might not have enough value by the first layers to change them much
-    - This is why we don’t want networks with too many layers: ResNet-1000 performed worse than ResNet-152
-    - Just to solve this problem in RNNs, LSTMs were invented
-    - Exploding gradients occur when gradients (maybe for activations other than sigmoid), are >1
-    - Exploding gradients could potentially be taken care of by clipping gradients at a max value
-
-- Slow Convergence - no guarantee that:
-    - network will converge to a GOOD solution
-    - convergence will be swift
-    - convergence will occur at all
-
-- Ill conditioning: High condition number (ratio of max Eigenvalue to min Eigenvalue)
-    - If the condition number is high, surface is more elliptical
-    - If condition number is low, surface is more spherical, which is nice for descending
-
-- Inexact gradients, how to choose hyperparameters, etc.
-
-### Batch GD, Stochastic GD, Mini-Batch SGD
-
-- Batch GD: Compute the gradients for the entire training set, update the parameters
-    - Not recommended, because slow
-
-- Stochastic GD: Compute the gradients for 1 training example drawn randomly, update the parameters
-    - Loss computed in Batch GD is the average of all losses from training examples
-    - So Batch GD and SGD don’t converge to the same point
-    - It’s not called Instance GD, it’s called Stochastic GD because the samples are drawn randomly. There are proofs of convergence given depending on the fact that samples are random.
 
 - Mini-Batch SGD: Compute the gradients for a mini-batch of training examples drawn randomly, update the parameters
 
